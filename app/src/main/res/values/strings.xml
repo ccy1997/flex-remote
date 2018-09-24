@@ -1,0 +1,23 @@
+<resources>
+  <string name="app_name">FlexRemote</string>
+  <string name="title_activity_settings">Settings</string>
+  <string name="set_server_ip">Remote server IP address</string>
+  <string name="set_touch_pad_mode">Touch pad mode</string>
+  <string name="faq1_title_text">What is this app?</string>
+  <string name="faq1_summary_text">This simple app allows you to create a remote control for PC using a drag-and-drop editor.</string>
+  <string name="faq2_title_text">How can I connect my mobile device to my PC?</string>
+  <string name="faq2_summary1_text">1. Download the remote server application from the link below and install it on your PC.</string>
+  <string name="faq2_summary2_text">2. Go to the setting page by pressing the top-right corner of the app\'s main page.</string>
+  <string name="faq2_summary3_text">3. Press \'Remote server IP address\' and enter the IP shown on the remote server application.</string>
+  <string name="faq2_summary4_text">4. Press one of the created remote control on the app\'s main page and start connection.</string>
+  <string name="faq3_title_text">I can\'t connect my mobile device to the PC server even with IP entered</string>
+  <string name="faq3_summary_text">Make sure there is no typo for the IP address, your PC\'s firewall is disabled and your mobile device and PC are connected to the same Wi-Fi network.</string>
+  <string name="faq4_title_text">Some key action doesn\'t work</string>
+  <string name="faq4_summary_text">Make sure your PC use the American keyboard setting.</string>
+  <string name="toolbar_title_help_text">FAQ</string>
+  <string name="resize_on_off_button_default_text">Resize on</string>
+  <string name="add_key_button_text">Key</string>
+  <string name="add_touch_pad_button_text">Touch pad</string>
+  <string name="empty_list_view_string">No remote control created</string>
+  <string name="toolbar_title_settings_text">Settings</string>
+</resources>

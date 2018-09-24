@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.preference.EditTextPreference
+        android:key="set_server_ip"
+        android:title="@string/set_server_ip" />
+
+    <android.support.v7.preference.SwitchPreferenceCompat
+        android:key="set_touch_pad_mode"
+        android:summaryOff="Relative"
+        android:summaryOn="Absolute"
+        android:title="@string/set_touch_pad_mode" />
+
+    <android.support.v7.preference.SeekBarPreference
+        android:key="set_touch_pad_sensitivity"
+        android:defaultValue="3"
+        android:max="10"
+        android:title="Relative touch pad sensitivity"
+        android:summary=" "/>
+
+    <android.support.v7.preference.Preference
+        android:key="disable_ads_temporarily"
+        android:title="Disable ads temporarily"
+        android:summary="Disable ads temporarily by watching a reward video, ads would be re-enabled if you restart the app completely"/>
+
+</android.support.v7.preference.PreferenceScreen>
