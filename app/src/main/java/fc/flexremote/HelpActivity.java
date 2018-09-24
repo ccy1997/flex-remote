@@ -1,5 +1,6 @@
 package fc.flexremote;
 
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -22,7 +23,11 @@ public class HelpActivity extends AppCompatActivity {
     serverDownloadLink.setClickable(true);
     serverDownloadLink.setMovementMethod(LinkMovementMethod.getInstance());
     String html = "<a href='https://drive.google.com/file/d/1R1BYQuq4KRMmm_Og1rS6VTh-F9mB4m7U/view?usp=sharing'>FlexRemote Server</a>";
-    serverDownloadLink.setText(Html.fromHtml(html, Html.FROM_HTML_MODE_COMPACT));
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+      serverDownloadLink.setText(Html.fromHtml(html, Html.FROM_HTML_MODE_COMPACT));
+    else
+      serverDownloadLink.setText(Html.fromHtml(html));
   }
 
 }

@@ -24,7 +24,6 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
-import com.jirbo.adcolony.AdColonyBundleBuilder;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         MobileAds.initialize(this, "ca-app-pub-3009958898657292~7273124948");
         AdColony.configure(this, "app04df88f3c4034ac799", "vzcad036afd5184ef2bd", "vzbdc02ef586874e50ab");
-        AdColonyBundleBuilder.setZoneId("vzbdc02ef586874e50ab");
         setupInterstitialAd();
         setupToolbar();
         setupRemoteControlListView();

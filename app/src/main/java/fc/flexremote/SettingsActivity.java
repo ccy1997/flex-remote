@@ -7,12 +7,6 @@ import android.support.v7.preference.PreferenceFragmentCompat;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
-import com.adcolony.sdk.AdColony;
-import com.adcolony.sdk.AdColonyInterstitial;
-import com.adcolony.sdk.AdColonyInterstitialListener;
-import com.adcolony.sdk.AdColonyReward;
-import com.adcolony.sdk.AdColonyRewardListener;
-import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -34,6 +28,7 @@ public class SettingsActivity extends AppCompatActivity implements RewardedVideo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        AdColonyBundleBuilder.setZoneId("vzbdc02ef586874e50ab");
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(SettingsActivity.this);
         mRewardedVideoAd.setRewardedVideoAdListener(this);
         loadRewardedVideoAds(adNetworkIndex);

@@ -86,6 +86,7 @@ public class RemoteControlActivity extends AppCompatActivity {
 
     private final class KeyTouchListener implements View.OnTouchListener {
 
+        @SuppressLint("ClickableViewAccessibility")
         @Override
         public boolean onTouch(View v, MotionEvent motionEvent) {
             try {
@@ -119,6 +120,7 @@ public class RemoteControlActivity extends AppCompatActivity {
             this.touchPadRect = touchPadRect;
         }
 
+        @SuppressLint("ClickableViewAccessibility")
         @Override
         public boolean onTouch(View v, MotionEvent event) {
 
@@ -190,6 +192,7 @@ public class RemoteControlActivity extends AppCompatActivity {
             this.touchPadRect = touchPadRect;
         }
 
+        @SuppressLint("ClickableViewAccessibility")
         @Override
         public boolean onTouch(View v, MotionEvent event) {
 
