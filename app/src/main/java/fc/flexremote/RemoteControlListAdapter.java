@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.SystemClock;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.PopupMenu;
 import android.view.LayoutInflater;
@@ -71,6 +72,11 @@ public class RemoteControlListAdapter extends ArrayAdapter<RemoteControlConfig> 
         viewHolder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
+                MainActivity mainActivity = (MainActivity) c;
+                if (SystemClock.elapsedRealtime() - mainActivity.getLastClickTime() < Parameters.RECLICK_COOLDOWN_MILLI)
+                    return;
+
+                mainActivity.setLastClickTime(SystemClock.elapsedRealtime());
                 showPopUpMenu(v);
             }
         });
@@ -80,6 +86,11 @@ public class RemoteControlListAdapter extends ArrayAdapter<RemoteControlConfig> 
         viewHolder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
+                MainActivity mainActivity = (MainActivity) c;
+                if (SystemClock.elapsedRealtime() - mainActivity.getLastClickTime() < Parameters.RECLICK_COOLDOWN_MILLI)
+                    return;
+
+                mainActivity.setLastClickTime(SystemClock.elapsedRealtime());
                 showDeleteDialog(v);
             }
         });

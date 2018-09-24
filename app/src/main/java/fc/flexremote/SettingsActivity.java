@@ -28,14 +28,13 @@ public class SettingsActivity extends AppCompatActivity implements RewardedVideo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        AdColonyBundleBuilder.setZoneId("vzbdc02ef586874e50ab");
-        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(SettingsActivity.this);
-        mRewardedVideoAd.setRewardedVideoAdListener(this);
-        loadRewardedVideoAds(adNetworkIndex);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_settings);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(SettingsActivity.this);
+        mRewardedVideoAd.setRewardedVideoAdListener(this);
+        loadRewardedVideoAds(adNetworkIndex);
 
         PreferenceFragmentCompat settingsFragmentCompat =
                 (PreferenceFragmentCompat) getSupportFragmentManager().findFragmentById(R.id.settings_fragment);
@@ -80,6 +79,7 @@ public class SettingsActivity extends AppCompatActivity implements RewardedVideo
         AdsFlag.showAds = false;
         if (mAdView != null)
             mAdView.destroy();
+        Toast.makeText(SettingsActivity.this, "No Ads for a while!", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -89,7 +89,6 @@ public class SettingsActivity extends AppCompatActivity implements RewardedVideo
 
     @Override
     public void onRewardedVideoAdClosed() {
-        Toast.makeText(SettingsActivity.this, "No Ads for a while!", Toast.LENGTH_SHORT).show();
         loadRewardedVideoAds(adNetworkIndex);
     }
 

@@ -24,6 +24,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
+import com.jirbo.adcolony.AdColonyBundleBuilder;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -42,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MobileAds.initialize(this, "ca-app-pub-3009958898657292~7273124948");
-        AdColony.configure(this, "app04df88f3c4034ac799", "vzcad036afd5184ef2bd", "vzbdc02ef586874e50ab");
+        AdColony.configure(this, "app04df88f3c4034ac799", "vzbdc02ef586874e50ab");
+        AdColonyBundleBuilder.setZoneId("vzbdc02ef586874e50ab");
         setupInterstitialAd();
         setupToolbar();
         setupRemoteControlListView();
@@ -67,13 +69,17 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        ImageButton addRemote = findViewById(R.id.option_add_keyboard);
+        ImageButton addRemote = findViewById(R.id.option_add_remote_control);
         ImageButton help = findViewById(R.id.option_help);
         ImageButton settings = findViewById(R.id.option_settings);
 
         addRemote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (SystemClock.elapsedRealtime() - lastClickTime < Parameters.RECLICK_COOLDOWN_MILLI)
+                    return;
+
+                lastClickTime = SystemClock.elapsedRealtime();
                 showOrientationDialog();
             }
         });
@@ -81,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
         help.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (SystemClock.elapsedRealtime() - lastClickTime < Parameters.RECLICK_COOLDOWN_MILLI)
+                    return;
+
+                lastClickTime = SystemClock.elapsedRealtime();
                 Intent startHelpActivity = new Intent(MainActivity.this, HelpActivity.class);
                 MainActivity.this.startActivity(startHelpActivity);
             }
@@ -89,6 +99,10 @@ public class MainActivity extends AppCompatActivity {
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (SystemClock.elapsedRealtime() - lastClickTime < Parameters.RECLICK_COOLDOWN_MILLI)
+                    return;
+
+                lastClickTime = SystemClock.elapsedRealtime();
                 Intent startSettingActivity = new Intent(MainActivity.this, SettingsActivity.class);
                 MainActivity.this.startActivity(startSettingActivity);
             }
@@ -107,10 +121,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // mis-clicking prevention, using threshold of 1000 ms
-                if (SystemClock.elapsedRealtime() - lastClickTime < 1000){
+                if (SystemClock.elapsedRealtime() - lastClickTime < Parameters.RECLICK_COOLDOWN_MILLI)
                     return;
-                }
+
                 lastClickTime = SystemClock.elapsedRealtime();
 
                 Toast.makeText(MainActivity.this, "Connecting...", Toast.LENGTH_SHORT).show();
@@ -136,10 +149,15 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else if (intentSource.equals("RemoteControlActivity")) {
-            if (AdsFlag.showAds && ((System.currentTimeMillis() - AdsFlag.interstitialAdLastShownTime) > 120000L) &&
-                    mInterstitialAd.isLoaded()) {
+            long timePassedSinceLastInterstitial = SystemClock.elapsedRealtime() - AdsFlag.interstitialAdLastShownTime;
+
+            if (AdsFlag.showAds &&
+                mInterstitialAd.isLoaded() &&
+                timePassedSinceLastInterstitial > Parameters.INTERSTITIAL_AD_COOLDOWN_MILLI) {
+
                 mInterstitialAd.show();
-                AdsFlag.interstitialAdLastShownTime = System.currentTimeMillis();
+                AdsFlag.interstitialAdLastShownTime = SystemClock.elapsedRealtime();
+
             }
         }
     }
@@ -236,6 +254,14 @@ public class MainActivity extends AppCompatActivity {
         String serverIPString = sharedPref.getString("set_server_ip", "");
         Client client = new Client(this, serverIPString, remoteControlConfig);
         new Thread(client).start();
+    }
+
+    public long getLastClickTime() {
+        return lastClickTime;
+    }
+
+    public void setLastClickTime(long lastClickTime) {
+        this.lastClickTime = lastClickTime;
     }
 
 }

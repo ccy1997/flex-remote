@@ -22,5 +22,7 @@ public class Parameters {
     public static final int KEY_ACTION_DIALOG_LANDSCAPE_HEIGHT_DP = 300;
     public static final int ORIENTATION_DIALOG_WIDTH_DP = 260;
     public static final int ORIENTATION_DIALOG_HEIGHT_DP = 185;
+    public static final int RECLICK_COOLDOWN_MILLI = 1000;
+    public static final long INTERSTITIAL_AD_COOLDOWN_MILLI = 120000;
 
 }
