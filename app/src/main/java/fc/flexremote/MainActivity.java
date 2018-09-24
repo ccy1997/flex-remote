@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MobileAds.initialize(this, "ca-app-pub-3009958898657292~7273124948");
-        AdColony.configure(this, "app04df88f3c4034ac799", "vzbdc02ef586874e50ab");
+        AdColony.configure(this, "app04df88f3c4034ac799", "vzcad036afd5184ef2bd", "vzbdc02ef586874e50ab");
         AdColonyBundleBuilder.setZoneId("vzbdc02ef586874e50ab");
         setupInterstitialAd();
         setupToolbar();
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupInterstitialAd() {
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3009958898657292/1883468406");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         mInterstitialAd.setAdListener(new AdListener() {

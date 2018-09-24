@@ -62,7 +62,7 @@ public class SettingsActivity extends AppCompatActivity implements RewardedVideo
     private void loadRewardedVideoAds(int adNetworkIndex) {
         if (adNetworkIndex == AD_NETWORK_ADMOB) {
             this.adNetworkIndex = AD_NETWORK_ADCOLONY;
-            mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
+            mRewardedVideoAd.loadAd("ca-app-pub-3009958898657292/5097391890", new AdRequest.Builder().build());
         }
         else if (adNetworkIndex == AD_NETWORK_ADCOLONY) {
             this.adNetworkIndex = AD_NETWORK_ADMOB;
@@ -70,7 +70,7 @@ public class SettingsActivity extends AppCompatActivity implements RewardedVideo
                     .addNetworkExtrasBundle(AdColonyAdapter.class, AdColonyBundleBuilder.build())
                     .build();
 
-            mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", adRequest);
+            mRewardedVideoAd.loadAd("ca-app-pub-3009958898657292/5097391890", adRequest);
         }
     }
 
