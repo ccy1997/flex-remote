@@ -34,6 +34,10 @@ public class SettingsActivity extends AppCompatActivity implements RewardedVideo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(SettingsActivity.this);
+        mRewardedVideoAd.setRewardedVideoAdListener(this);
+        loadRewardedVideoAds(adNetworkIndex);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_settings);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -49,7 +53,7 @@ public class SettingsActivity extends AppCompatActivity implements RewardedVideo
                 if (mRewardedVideoAd.isLoaded())
                     mRewardedVideoAd.show();
                 else
-                    Toast.makeText(SettingsActivity.this, "Reward video not yet loaded", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SettingsActivity.this, "Reward video not loaded yet", Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
@@ -59,24 +63,20 @@ public class SettingsActivity extends AppCompatActivity implements RewardedVideo
             AdRequest adRequest = new AdRequest.Builder().build();
             mAdView.loadAd(adRequest);
         }
-
-        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(SettingsActivity.this);
-        mRewardedVideoAd.setRewardedVideoAdListener(this);
-        loadRewardedVideoAds(adNetworkIndex);
     }
 
     private void loadRewardedVideoAds(int adNetworkIndex) {
         if (adNetworkIndex == AD_NETWORK_ADMOB) {
-            adNetworkIndex = AD_NETWORK_ADCOLONY;
+            this.adNetworkIndex = AD_NETWORK_ADCOLONY;
             mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
         }
         else if (adNetworkIndex == AD_NETWORK_ADCOLONY) {
-            adNetworkIndex = AD_NETWORK_ADMOB;
+            this.adNetworkIndex = AD_NETWORK_ADMOB;
             AdRequest adRequest = new AdRequest.Builder()
                     .addNetworkExtrasBundle(AdColonyAdapter.class, AdColonyBundleBuilder.build())
                     .build();
 
-            mRewardedVideoAd.loadAd("ca-app-pub-3009958898657292/5097391890", adRequest);
+            mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", adRequest);
         }
     }
 
@@ -94,6 +94,7 @@ public class SettingsActivity extends AppCompatActivity implements RewardedVideo
 
     @Override
     public void onRewardedVideoAdClosed() {
+        Toast.makeText(SettingsActivity.this, "No Ads for a while!", Toast.LENGTH_SHORT).show();
         loadRewardedVideoAds(adNetworkIndex);
     }
 

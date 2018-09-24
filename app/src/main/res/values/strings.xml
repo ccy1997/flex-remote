@@ -13,7 +13,7 @@
   <string name="faq3_title_text">I can\'t connect my mobile device to the PC server even with IP entered</string>
   <string name="faq3_summary_text">Make sure there is no typo for the IP address, your PC\'s firewall is disabled and your mobile device and PC are connected to the same Wi-Fi network.</string>
   <string name="faq4_title_text">Some key action doesn\'t work</string>
-  <string name="faq4_summary_text">Make sure your PC use the American keyboard setting.</string>
+  <string name="faq4_summary_text">Make sure your PC uses the American keyboard setting.</string>
   <string name="toolbar_title_help_text">FAQ</string>
   <string name="resize_on_off_button_default_text">Resize on</string>
   <string name="add_key_button_text">Key</string>
