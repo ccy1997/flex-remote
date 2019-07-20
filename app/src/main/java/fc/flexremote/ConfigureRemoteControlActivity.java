@@ -26,8 +26,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -57,13 +55,6 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configure_remote_control);
-
-        if (AdsFlag.showAds) {
-            AdView mAdView = findViewById(R.id.banner_ad_view_configure_remote_control);
-            AdRequest adRequest = new AdRequest.Builder().build();
-            mAdView.loadAd(adRequest);
-        }
-
         setEditorOptionButtonsInitialAttributes();
         setupEditorByPurposeAndOrientation();
     }

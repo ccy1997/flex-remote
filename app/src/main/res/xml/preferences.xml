@@ -19,9 +19,4 @@
         android:title="Relative touch pad sensitivity"
         android:summary=" "/>
 
-    <android.support.v7.preference.Preference
-        android:key="disable_ads_temporarily"
-        android:title="Disable ads temporarily"
-        android:summary="Disable ads temporarily by watching a reward video, ads would be re-enabled if you restart the app completely"/>
-
 </android.support.v7.preference.PreferenceScreen>

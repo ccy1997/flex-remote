@@ -19,13 +19,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.adcolony.sdk.*;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
-import com.jirbo.adcolony.AdColonyBundleBuilder;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -35,33 +28,15 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private ArrayList<RemoteControlConfig> remoteControlConfigs;
     private RemoteControlListAdapter remoteControlListAdapter;
-    private InterstitialAd mInterstitialAd;
     private long lastClickTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MobileAds.initialize(this, "ca-app-pub-3009958898657292~7273124948");
-        AdColony.configure(this, "app04df88f3c4034ac799", "vzcad036afd5184ef2bd", "vzbdc02ef586874e50ab");
-        AdColonyBundleBuilder.setZoneId("vzbdc02ef586874e50ab");
-        setupInterstitialAd();
         setupToolbar();
         setupRemoteControlListView();
         Preload.initializeKeyActionList();
-    }
-
-    private void setupInterstitialAd() {
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3009958898657292/1883468406");
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdClosed() {
-                mInterstitialAd.loadAd(new AdRequest.Builder().build());
-            }
-        });
     }
 
     private void setupToolbar() {
@@ -147,18 +122,6 @@ public class MainActivity extends AppCompatActivity {
                 remoteControlListAdapter.notifyDataSetChanged();
             }
 
-        }
-        else if (intentSource.equals("RemoteControlActivity")) {
-            long timePassedSinceLastInterstitial = SystemClock.elapsedRealtime() - AdsFlag.interstitialAdLastShownTime;
-
-            if (AdsFlag.showAds &&
-                mInterstitialAd.isLoaded() &&
-                timePassedSinceLastInterstitial > Parameters.INTERSTITIAL_AD_COOLDOWN_MILLI) {
-
-                mInterstitialAd.show();
-                AdsFlag.interstitialAdLastShownTime = SystemClock.elapsedRealtime();
-
-            }
         }
     }
 

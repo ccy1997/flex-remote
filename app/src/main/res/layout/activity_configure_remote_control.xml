@@ -7,17 +7,6 @@
     android:layout_height="match_parent"
     android:layout_margin="0dp">
 
-    <com.google.android.gms.ads.AdView
-      xmlns:ads="http://schemas.android.com/apk/res-auto"
-      android:id="@+id/banner_ad_view_configure_remote_control"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      ads:adSize="BANNER"
-      ads:adUnitId="ca-app-pub-3009958898657292/7739743399" />
-
     <ImageView
         android:id="@+id/delete_view"
         android:layout_width="wrap_content"
