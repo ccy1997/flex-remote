@@ -25,6 +25,13 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+/**
+ * This activity is the entry point of the application
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class MainActivity extends AppCompatActivity {
     private ArrayList<RemoteControlConfig> remoteControlConfigs;
     private RemoteControlListAdapter remoteControlListAdapter;
@@ -39,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         Preload.initializeKeyActionList();
     }
 
+    /**
+     * Setup the toolbar of the main page
+     */
     private void setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
@@ -84,6 +94,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Setup the list view that shows all created remote controls
+     */
     private void setupRemoteControlListView() {
         ListView listView = (ListView) findViewById(R.id.lv_remote_controls);
         listView.setEmptyView(findViewById(R.id.empty_list_view_text));
@@ -125,6 +138,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Create a dialog for choosing remote control's orientation
+     * @return A dialog in linear layout
+     */
     private LinearLayout createOrientationDialogLinearLayout() {
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
@@ -152,6 +169,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Show the dialog for choosing remote control's orientation
+     */
     private void showOrientationDialog() {
         LinearLayout linearLayout = createOrientationDialogLinearLayout();
         Button portrait = (Button) linearLayout.getChildAt(0);
@@ -194,6 +214,11 @@ public class MainActivity extends AppCompatActivity {
         window.setAttributes(lp);
     }
 
+    /**
+     * Populate the saved remote control configuration arraylist from files
+     *
+     * @param remoteControlConfigs The remote control configuration arraylist
+     */
     private void populateRemoteControlConfigs(ArrayList<RemoteControlConfig> remoteControlConfigs) {
         File[] fileList = getFilesDir().listFiles();
 
@@ -212,6 +237,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Connect a phone's client to a PC server
+     *
+     * @param remoteControlConfig The configuration of the selected remote control
+     */
     private void connectServer(RemoteControlConfig remoteControlConfig) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         String serverIPString = sharedPref.getString("set_server_ip", "");
@@ -219,10 +249,19 @@ public class MainActivity extends AppCompatActivity {
         new Thread(client).start();
     }
 
+    /**
+     * Get the last time any button is being clicked
+     * @return The last time any button is being clicked
+     */
     public long getLastClickTime() {
         return lastClickTime;
     }
 
+
+    /**
+     * Set the last time any button is being clicked
+     * @param lastClickTime The last time any button is being clicked
+     */
     public void setLastClickTime(long lastClickTime) {
         this.lastClickTime = lastClickTime;
     }
