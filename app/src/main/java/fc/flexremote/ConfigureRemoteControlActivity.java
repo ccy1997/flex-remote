@@ -32,6 +32,13 @@ import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+/**
+ * This activity represents the screen for configuring remote control
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class ConfigureRemoteControlActivity extends AppCompatActivity {
     private final int RESIZE_BOTTOM_RIGHT = 0;
     private final int RESIZE_TOP_RIGHT = 1;
@@ -64,6 +71,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         showSaveDialog();
     }
 
+    /**
+     * Set the initial attributes of the option buttons within the remote control editor
+     */
     private void setEditorOptionButtonsInitialAttributes() {
         parentLayout = findViewById(R.id.cl_configure_keyboard_activity);
         resizeOnOff = findViewById(R.id.resize_on_off_button);
@@ -82,6 +92,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         addTouchPad.setOnClickListener(new CreateButtonClickListener(touchPadList, Parameters.BUTTON_TYPE_TOUCHPAD));
     }
 
+    /**
+     * Set the layout of the editor using the 'purpose' and 'orientation' information provided by user
+     */
     private void setupEditorByPurposeAndOrientation() {
         Intent intent = getIntent();
         String purpose = intent.getStringExtra("purpose");
@@ -113,6 +126,14 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Add reposition and resize function to the button spawned by the user
+     *
+     * @param mainButton The button for adding the reposition and resize function
+     * @param mainButtonList An arraylist of spawned buttons currently on the screen
+     * @param buttonType The button type (0 for key, 1 for touchpad)
+     * @param elevationCount The elevation value to be applied to mainButton
+     */
     @SuppressLint("ClickableViewAccessibility")
     private void addRepositionAndResizeFunctionForButton(final Button mainButton, final ArrayList<Button> mainButtonList,
                                                          final int buttonType, final int elevationCount) {
@@ -158,6 +179,15 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Create a set of resize buttons associated to a main button
+     *
+     * @param mainButtonLeft The x-position of the left of the main button
+     * @param mainButtonTop The y-position of the top of the main button
+     * @param mainButtonRight The x-position of the right of the main button
+     * @param mainButtonBottom The y-position of the bottom of the main button
+     * @return An arraylist of resize buttons
+     */
     private ArrayList<Button> prepareResizeButtons(float mainButtonLeft, float mainButtonTop, float mainButtonRight, float mainButtonBottom) {
         ArrayList<Button> resizeButtons = new ArrayList<>();
 
@@ -189,6 +219,11 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         return resizeButtons;
     }
 
+    /**
+     * Set the common attributes of a resize button
+     *
+     * @param resizeButton The resize button for setting the common attributes
+     */
     private void setResizeButtonCommonAttributes(Button resizeButton) {
         resizeButton.setLayoutParams(
                 new ConstraintLayout.LayoutParams(Utils.dpToPx(Parameters.RESIZE_BOX_WIDTH_DP, this), Utils.dpToPx(Parameters.RESIZE_BOX_HEIGHT_DP, this)));
@@ -200,6 +235,15 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
             resizeButton.setVisibility(View.GONE);
     }
 
+    /**
+     * Set listener for the resize buttons
+     *
+     * @param mainButton The main button associated to the resize buttons
+     * @param resizeTopLeft The top-left resize button
+     * @param resizeTopRight The top-right resize button
+     * @param resizeBottomRight The bottom-right resize button
+     * @param resizeBottomLeft The bottom-left resize button
+     */
     @SuppressLint("ClickableViewAccessibility")
     private void setResizeButtonsListener(Button mainButton, Button resizeTopLeft, Button resizeTopRight, Button resizeBottomRight, Button resizeBottomLeft) {
         resizeTopLeft.setOnTouchListener(new ResizeButtonTouchListener(RESIZE_TOP_LEFT, mainButton, resizeBottomLeft, resizeTopRight));
@@ -208,6 +252,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         resizeBottomLeft.setOnTouchListener(new ResizeButtonTouchListener(RESIZE_BOTTOM_LEFT, mainButton, resizeTopLeft, resizeBottomRight));
     }
 
+    /**
+     * Set the visibility of the option buttons when user is repositioning a main button
+     */
     private void setOptionsVisibilityOnMainButtonRepositionStart() {
         resizeOnOff.setVisibility(View.GONE);
         addKey.setVisibility(View.GONE);
@@ -216,6 +263,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         bin.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * Set the visibility of the option buttons when user FINISHES repositioning a main button
+     */
     private void setOptionsVisibilityOnMainButtonRepositionEnd() {
         resizeOnOff.setVisibility(View.VISIBLE);
         addKey.setVisibility(View.VISIBLE);
@@ -225,6 +275,15 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         bin.setBackgroundResource(R.drawable.ic_delete_forever_black_50dp);
     }
 
+    /**
+     * Remove a main button and its associated resize buttons
+     *
+     * @param mainButton The main button to be removed
+     * @param topLeftResize The top-left resize button
+     * @param topRightResize The top-right resize button
+     * @param bottomRightResize The bottom-right resize button
+     * @param bottomLeftResize The bottom-left resize button
+     */
     private void removeMainButtonAndAssociatedResizeButtons(Button mainButton, Button topLeftResize, Button topRightResize,
                                                             Button bottomRightResize, Button bottomLeftResize) {
         parentLayout.removeView(mainButton);
@@ -234,6 +293,13 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         parentLayout.removeView(bottomLeftResize);
     }
 
+    /**
+     * Calculate the x-position of the resize button when its associated main button is minimized
+     * @param resizeButtonType The resize button type (top-left, top-right etc.)
+     * @param resizeButtonLeft The x-position of the left of the resize button
+     * @param mainButtonWidth The width of the main button
+     * @return The x-position of the resize button when its associated main button is minimized
+     */
     private float calculateResizeButtonXWhenMainButtonMin(int resizeButtonType, float resizeButtonLeft, int mainButtonWidth) {
         if (resizeButtonType == RESIZE_TOP_LEFT || resizeButtonType == RESIZE_BOTTOM_LEFT)
             return resizeButtonLeft + (mainButtonWidth - Utils.dpToPx(Parameters.BUTTON_MIN_WIDTH_DP, activity));
@@ -241,6 +307,14 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
             return resizeButtonLeft - (mainButtonWidth - Utils.dpToPx(Parameters.BUTTON_MIN_WIDTH_DP, activity));
     }
 
+    /**
+     * Calculate the y-position of the resize button when its associated main button is minimized
+     *
+     * @param resizeButtonType The resize button type (top-left, top-right etc.)
+     * @param resizeButtonTop The y-position of the top of the resize button
+     * @param mainButtonHeight The height of the main button
+     * @return The y-position of the resize button when its associated main button is minimized
+     */
     private float calculateResizeButtonYWhenMainButtonMin(int resizeButtonType, float resizeButtonTop, int mainButtonHeight) {
         if (resizeButtonType == RESIZE_TOP_LEFT || resizeButtonType == RESIZE_TOP_RIGHT)
             return resizeButtonTop + (mainButtonHeight - Utils.dpToPx(Parameters.BUTTON_MIN_HEIGHT_DP, activity));
@@ -248,6 +322,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
             return resizeButtonTop - (mainButtonHeight - Utils.dpToPx(Parameters.BUTTON_MIN_HEIGHT_DP, activity));
     }
 
+    /**
+     * Set the visibility of the option buttons when user is resizing a button
+     */
     private void setOptionsVisibilityOnMainButtonResizeStart() {
         resizeOnOff.setVisibility(View.GONE);
         addKey.setVisibility(View.GONE);
@@ -255,6 +332,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         done.setVisibility(View.GONE);
     }
 
+    /**
+     * Set the visibility of the option buttons when user FINISHES resizing a button
+     */
     private void setOptionsVisibilityOnMainButtonResizeEnd() {
         resizeOnOff.setVisibility(View.VISIBLE);
         addKey.setVisibility(View.VISIBLE);
@@ -262,6 +342,16 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         done.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * Perform the reposition of a main button
+     *
+     * @param v The view representing the main button
+     * @param xPositionFinger The x-position of the user's finger
+     * @param yPositionFinger The y-position of the user's finger
+     * @param dX The x-distance between user's finger and main button
+     * @param dY The y-distance between user's finger and main button
+     * @param bin The bin button
+     */
     private void performMainButtonReposition(View v, float xPositionFinger, float yPositionFinger, float dX, float dY, ImageView bin) {
         float unRestrictedButtonX = xPositionFinger - dX;
         float unRestrictedButtonY = yPositionFinger - dY;
@@ -286,6 +376,15 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
             bin.setBackgroundResource(R.drawable.ic_delete_forever_black_50dp);
     }
 
+    /**
+     * Perform the reposition of resize buttons
+     *
+     * @param mainButton The main button associated to the resize buttons
+     * @param topLeftResize The top-left resize button
+     * @param topRightResize The top-right resize button
+     * @param bottomRightResize The bottom-right resize button
+     * @param bottomLeftResize The button-left resize button
+     */
     private void performResizeButtonsReposition(Button mainButton, Button topLeftResize, Button topRightResize, Button bottomRightResize, Button bottomLeftResize) {
         topLeftResize.setX(mainButton.getX() - Utils.dpToPx(Parameters.RESIZE_BOX_WIDTH_DP / 2, activity));
         topLeftResize.setY(mainButton.getY() - Utils.dpToPx(Parameters.RESIZE_BOX_HEIGHT_DP / 2, activity));
@@ -300,6 +399,16 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         bottomLeftResize.setY(mainButton.getY() + mainButton.getHeight() - Utils.dpToPx(Parameters.RESIZE_BOX_HEIGHT_DP / 2, activity));
     }
 
+    /**
+     * Perform the x-reposition of a resize button
+     *
+     * @param resizeButton The resize button to be repositioned
+     * @param resizeButtonType The resize button type (top-left etc.)
+     * @param adjacentResizeButtonSameX The other resize button that has the same x-position as resizeButton
+     * @param resizeButtonXWhenMainButtonMin The x-position of the resize btton when the main button is minimized
+     * @param xPositionFinger The x-position of user's finger
+     * @param dX The x-distance between the user's finger and the main button
+     */
     private void performResizeButtonXReposition(Button resizeButton, int resizeButtonType, Button adjacentResizeButtonSameX,
                                                 float resizeButtonXWhenMainButtonMin, float xPositionFinger, float dX) {
         float unRestrictedButtonX = (int) (xPositionFinger - dX);
@@ -334,6 +443,16 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Perform the y-reposition of a resize button
+     *
+     * @param resizeButton The resize button to be repositioned
+     * @param resizeButtonType The resize button type (top-left etc.)
+     * @param adjacentResizeButtonSameY The other resize button that has the same y-position as resizeButton
+     * @param resizeButtonYWhenMainButtonMin The y-position of the resize button when the main button is minimized
+     * @param yPositionFinger The y-position of user's finger
+     * @param dY The y-distance between the user's finger and the main button
+     */
     private void performResizeButtonYReposition(Button resizeButton, int resizeButtonType, Button adjacentResizeButtonSameY,
                                                 float resizeButtonYWhenMainButtonMin, float yPositionFinger, float dY) {
         float unRestrictedButtonY = (int) (yPositionFinger - dY);
@@ -368,6 +487,13 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Perform the resize of a main button
+     *
+     * @param mainButton The main button to be resized
+     * @param resizeButton The resize button being dragged by user
+     * @param resizeButtonType The resize button type (top-left etc.)
+     */
     private void performMainButtonResize(Button mainButton, Button resizeButton, int resizeButtonType) {
         float newMainButtonX, newMainButtonY;
         int newMainButtonWidth = 0, newMainButtonHeight = 0;
@@ -401,6 +527,11 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         Utils.setTextSizeBasedOnButtonSize(this, mainButton, mainButton.getWidth(), mainButton.getHeight());
     }
 
+    /**
+     * Show the key action option dialog
+     *
+     * @param button The main button being pressed by user for modifying its key action
+     */
     private void showKeyActionOptionDialog(final Button button) {
         GridView gridView = new GridView(this);
         ArrayList<String> keyActions = Preload.getKeyActions();
@@ -444,6 +575,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         window.setAttributes(lp);
     }
 
+    /**
+     * Show the save dialog
+     */
     private void showSaveDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.DialogTheme);
         builder.setMessage("Save this remote control config?");
@@ -472,6 +606,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    /**
+     * Show the dialog for setting the name of the remote control
+     */
     private void showEnterRemoteControlNameDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.DialogTheme);
         builder.setMessage("Remote control name:");
@@ -500,6 +637,13 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    /**
+     * Create a file storing the remote control configuration
+     *
+     * @param remoteControlName The name of the remote control
+     * @param keyList An arraylist of key for the remote control
+     * @param touchPadList An arraylist of touchpad for the remote control
+     */
     private void createRemoteControlConfigFile(String remoteControlName, ArrayList<Button> keyList, ArrayList<Button> touchPadList) {
         PrintWriter printWriter = null;
         int[] buttonPosition = new int[2];
@@ -537,6 +681,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         printWriter.close();
     }
 
+    /**
+     * Overwrite the content of a remote control configuration file with empty content
+     */
     private void overwriteRemoteControlConfigFile() {
         Intent intent = getIntent();
         String remoteName = intent.getStringExtra("remote_name");
@@ -553,6 +700,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         createRemoteControlConfigFile(remoteName, keyList, touchPadList);
     }
 
+    /**
+     * Go back to main activity by not saving the remote control configuration
+     */
     private void backToMainActivityAfterCancel() {
         Intent startMainActivity = new Intent(activity, MainActivity.class);
         startMainActivity.putExtra("intent_source", "ConfigureRemoteControlActivity");
@@ -561,6 +711,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         startActivity(startMainActivity);
     }
 
+    /**
+     * Go back to main activity by saving the edited remote control configuration
+     */
     private void backToMainActivityAfterEdit() {
         Intent startMainActivity = new Intent(activity, MainActivity.class);
         startMainActivity.putExtra("intent_source", "ConfigureRemoteControlActivity");
@@ -569,6 +722,11 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         startActivity(startMainActivity);
     }
 
+    /**
+     * Go back to main activity by saving the newly created remote control configuration
+     *
+     * @param remoteControlName The name of the newly created remote control
+     */
     private void backToMainActivityOnValidNameAfterCreate(String remoteControlName) {
         if (remoteControlName.equals("")) {
             Toast.makeText(activity, "Name cannot be empty", Toast.LENGTH_SHORT).show();
@@ -590,11 +748,22 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Check if a file name exists
+     *
+     * @param name The file name to be checked
+     * @return True if the name exists
+     */
     private boolean isNameExist(String name) {
         File f = new File(getFilesDir(), name);
         return f.exists();
     }
 
+    /**
+     * Set the common attributes of a main button
+     *
+     * @param mainButton The main button for settng the common attributes
+     */
     private void setMainButtonCommonAttributes(Button mainButton) {
         mainButton.setId(View.generateViewId());
         mainButton.setStateListAnimator(null);
@@ -602,6 +771,12 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         mainButton.setPadding(0,0,0,0);
     }
 
+    /**
+     * Set the unique attributes of a main button based on whether it is a KEY or TOUCHPAD
+     *
+     * @param mainButton The main button for setting the unique attributes
+     * @param mainButtonType The type of the main button (KEY or TOUCHPAD)
+     */
     private void setMainButtonUniqueAttributesByType(Button mainButton, int mainButtonType) {
         if (mainButtonType == Parameters.BUTTON_TYPE_KEY) {
             setKeyAttributes(mainButton);
@@ -611,6 +786,11 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Set the key attributes
+     *
+     * @param mainButton The key
+     */
     private void setKeyAttributes(Button mainButton) {
         float mainButtonX = Parameters.KEY_DEFAULT_X_NORMALIZED * Utils.getDisplayMetrics(activity).widthPixels;
         float mainButtonY = Parameters.KEY_DEFAULT_Y_NORMALIZED * Utils.getDisplayMetrics(activity).heightPixels;
@@ -624,6 +804,11 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         mainButton.setTag("No_Action");
     }
 
+    /**
+     * Set the touchpad attributes
+     *
+     * @param mainButton The touchpad
+     */
     private void setTouchPadAttributes(Button mainButton) {
         float mainButtonX = Parameters.TOUCHPAD_DEFAULT_X_NORMALIZED * Utils.getDisplayMetrics(activity).widthPixels;
         float mainButtonY = Parameters.TOUCHPAD_DEFAULT_Y_NORMALIZED * Utils.getDisplayMetrics(activity).heightPixels;
@@ -635,6 +820,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         mainButton.setLayoutParams(new ConstraintLayout.LayoutParams(mainButtonDefaultWidth, mainButtonDefaultHeight));
     }
 
+    /**
+     * An inner class that represents the main button on-click listener
+     */
     private final class CreateButtonClickListener implements View.OnClickListener {
         ArrayList<Button> mainButtonList;
         int mainButtonType;
@@ -657,6 +845,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * An inner class that represents the resize on/off button on-click listener
+     */
     private final class ResizeOnOffButtonListener implements View.OnClickListener {
         private ArrayList<Button> resizeButtonList;
 
@@ -685,6 +876,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * An inner class that represents the main button on-touch listener
+     */
     private final class MainButtonTouchListener implements View.OnTouchListener {
         ArrayList<Button> mainButtonList;
         Button topLeftResize, topRightResize, bottomRightResize, bottomLeftResize;
@@ -745,6 +939,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * An inner class that represents the resize button on-touch listener
+     */
     private final class ResizeButtonTouchListener implements View.OnTouchListener {
         int resizeButtonType;
         Button mainButton;
@@ -792,6 +989,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * An inner class that represents the done-create button on-click listener
+     */
     private final class DoneCreateClickListener implements View.OnClickListener {
 
         @Override
@@ -801,6 +1001,9 @@ public class ConfigureRemoteControlActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * An inner class that represents the done-edit button on-click listener
+     */
     private final class DoneEditClickListener implements View.OnClickListener {
 
         @Override
