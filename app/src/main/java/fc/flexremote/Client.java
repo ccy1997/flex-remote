@@ -15,6 +15,13 @@ import java.net.UnknownHostException;
 
 import fc.flexremote.common.Message;
 
+/**
+ * This class represents the client-end on a mobile device that connects to the server-end on a PC
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class Client implements Runnable {
     private MainActivity mainActivity;
     private RemoteControlConfig remoteControlConfig;
@@ -33,11 +40,19 @@ public class Client implements Runnable {
     @Override
     public void run() {
         try {
+            // Reset all resources used for client-server communication
             ConnectionResource.reset();
+
+            // Attempt to connect to the PC server
             server = new Socket();
             server.connect(new InetSocketAddress(hostIPString, PORT), 3000);
             toServer = new ObjectOutputStream(server.getOutputStream());
+
+            // Connection successful if this line is reached
+            // Allow this thread to send message to the PC server
             run = true;
+
+            // Prepare relevant info and start RemoteControlActivity
             SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(mainActivity);
             int touchPadSensitivity = sharedPref.getInt("set_touch_pad_sensitivity",5);
             boolean touchPadMode = sharedPref.getBoolean("set_touch_pad_mode", false);
@@ -54,6 +69,7 @@ public class Client implements Runnable {
             showErrorMessage(mainActivity,"Fail to connect to remote server\n(Have you set the server IP?)");
         }
 
+        // Send mobile device's info to the PC server
         if (run) {
             try {
                 toServer.writeObject(new Message(Message.MESSAGE_DEVICE, Build.MANUFACTURER + " " + Build.MODEL));
@@ -63,6 +79,7 @@ public class Client implements Runnable {
             }
         }
 
+        // Keep listening to the message queue for any commands to be sent to the PC server
         while (run) {
             try {
                 Message message = ConnectionResource.getMessageQueue().take();
@@ -89,6 +106,12 @@ public class Client implements Runnable {
 
     }
 
+    /**
+     * Show the provided error message
+     *
+     * @param c The context in which the error message is displayed
+     * @param message The error message to be displayed
+     */
     private void showErrorMessage (final Context c, final String message) {
         mainActivity.runOnUiThread(new Runnable() {
             public void run() {
