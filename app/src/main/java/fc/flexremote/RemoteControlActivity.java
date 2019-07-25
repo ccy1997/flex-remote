@@ -16,6 +16,13 @@ import java.util.ArrayList;
 import fc.flexremote.common.Control;
 import fc.flexremote.common.Message;
 
+/**
+ * This activity represents the screen for using a remote control
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class RemoteControlActivity extends AppCompatActivity {
     private ArrayList<Button> keyList = new ArrayList<>();
     private ArrayList<Button> touchPadList = new ArrayList<>();
@@ -37,6 +44,11 @@ public class RemoteControlActivity extends AppCompatActivity {
         setTouchPadTouchListener(touchPadList, touchPadMode);
     }
 
+    /**
+     * Set touch listener for all keys on the remote control
+     *
+     * @param keyList An arraylist of keys
+     */
     @SuppressLint("ClickableViewAccessibility")
     private void setKeyTouchListener (ArrayList<Button> keyList) {
         for (Button key : keyList) {
@@ -44,6 +56,12 @@ public class RemoteControlActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Set touch listener for all touch pad on the remote control
+     *
+     * @param touchPadList An arraylist of touch pad
+     * @param touchPadMode The touch pad mode (ABSOLUTE or RELATIVE)
+     */
     @SuppressLint("ClickableViewAccessibility")
     private void setTouchPadTouchListener (ArrayList<Button> touchPadList, final boolean touchPadMode) {
         for (final Button touchPad : touchPadList) {
@@ -84,6 +102,9 @@ public class RemoteControlActivity extends AppCompatActivity {
         startActivity(startMainActivity);
     }
 
+    /**
+     * An inner class that represents the key on-touch listener
+     */
     private final class KeyTouchListener implements View.OnTouchListener {
 
         @SuppressLint("ClickableViewAccessibility")
@@ -107,6 +128,9 @@ public class RemoteControlActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * An inner class that represents the RELATIVE touch pad on-touch listener
+     */
     private class RelativeTouchListener implements View.OnTouchListener {
         int touchPadLeftX, touchPadTopY, touchPadRightX, touchPadBottomY, actionMoveCount = 0;
         Rect touchPadRect;
@@ -179,6 +203,9 @@ public class RemoteControlActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * An inner class that represents the ABSOLUTE touch pad on-touch listener
+     */
     private class AbsoluteTouchListener implements View.OnTouchListener {
         int touchPadLeftX, touchPadTopY, touchPadRightX, touchPadBottomY, actionMoveCount = 0;
         float xNormalized, yNormalized;

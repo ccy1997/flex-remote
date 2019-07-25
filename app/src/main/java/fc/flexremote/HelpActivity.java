@@ -8,6 +8,13 @@ import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
+/**
+ * This activity represents the FAQ screen
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class HelpActivity extends AppCompatActivity {
 
   @Override
@@ -15,15 +22,18 @@ public class HelpActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_help);
 
+    // Set toolbar attributes
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_help);
     setSupportActionBar(toolbar);
     getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+    // Set PC server download link attributes
     TextView serverDownloadLink = (TextView) findViewById(R.id.faq2_server_dl_link);
     serverDownloadLink.setClickable(true);
     serverDownloadLink.setMovementMethod(LinkMovementMethod.getInstance());
     String html = "<a href='https://drive.google.com/file/d/1jruH1lxem7vdxBz6yIL0vth04VMd-Daw/view?usp=sharing'>FlexRemote Server</a>";
 
+    // For different android versions
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
       serverDownloadLink.setText(Html.fromHtml(html, Html.FROM_HTML_MODE_COMPACT));
     else

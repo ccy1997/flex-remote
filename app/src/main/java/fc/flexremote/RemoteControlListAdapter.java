@@ -22,6 +22,13 @@ import android.widget.Toast;
 import java.io.File;
 import java.util.ArrayList;
 
+/**
+ * This class represents an adapter for a list view that display a list of remote controls, implemented as an array adapter
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class RemoteControlListAdapter extends ArrayAdapter<RemoteControlConfig> {
 
     private ArrayList<RemoteControlConfig> remoteControlConfigs;
@@ -100,11 +107,23 @@ public class RemoteControlListAdapter extends ArrayAdapter<RemoteControlConfig> 
         return convertView;
     }
 
+    /**
+     * Check if a file name exists
+     *
+     * @param name The file name to be checked
+     * @return True if the file name exists
+     */
     private boolean isNameExist(String name) {
         File f = new File(c.getFilesDir(), name);
         return f.exists();
     }
 
+    /**
+     * Rename the remote control if the provided name is valid
+     *
+     * @param newRemoteControlName The providede new remote control name
+     * @param remoteControlConfig The remote control configuration
+     */
     private void renameOnValidName(String newRemoteControlName, RemoteControlConfig remoteControlConfig) {
         if (newRemoteControlName.equals("")) {
             Toast.makeText(c, "Name cannot be empty", Toast.LENGTH_SHORT).show();
