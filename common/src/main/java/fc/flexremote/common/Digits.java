@@ -4,6 +4,13 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * This class contains a set of digits
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class Digits {
     public static final String ZERO = "0";
     public static final String ONE = "1";

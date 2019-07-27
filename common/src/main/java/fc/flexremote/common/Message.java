@@ -2,6 +2,13 @@ package fc.flexremote.common;
 
 import java.io.Serializable;
 
+/**
+ * This class represents a message being sent between client and server
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class Message implements Serializable {
     public static final int MESSAGE_DISCONNECT = 0;
     public static final int MESSAGE_KEY_EVENT = 1;

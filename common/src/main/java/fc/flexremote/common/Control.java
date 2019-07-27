@@ -4,6 +4,13 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * This class contains a set of PC's control command
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class Control {
 
   public static final String ARROW_LEFT = "\u2190";

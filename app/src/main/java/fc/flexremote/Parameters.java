@@ -1,5 +1,12 @@
 package fc.flexremote;
 
+/**
+ * This class contains a set of constant parameters used across other classes
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class Parameters {
 
     public static final int BUTTON_TYPE_KEY = 0;

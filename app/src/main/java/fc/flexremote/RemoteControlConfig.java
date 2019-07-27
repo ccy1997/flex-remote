@@ -2,6 +2,13 @@ package fc.flexremote;
 
 import java.io.Serializable;
 
+/**
+ * This class represents a remote control configuration
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class RemoteControlConfig implements Serializable {
     private String name;
     private int orientation;

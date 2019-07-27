@@ -4,6 +4,13 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * This class contains a set of alphabets
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class Alphabets {
     public static final String SMALL_A = "a";
     public static final String SMALL_B = "b";

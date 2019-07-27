@@ -7,6 +7,13 @@ import fc.flexremote.common.Control;
 import fc.flexremote.common.Digits;
 import fc.flexremote.common.Symbols;
 
+/**
+ * This class is used to preload a set of resources for the application
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class Preload {
 
     private static ArrayList<String> keyActionList = new ArrayList<>();

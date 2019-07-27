@@ -16,6 +16,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+/**
+ * This class contains a set of utility methods used across other classes
+ *
+ * @author ccy
+ * @version 2019.0723
+ * @since 1.0
+ */
 public class Utils {
 
     /**
