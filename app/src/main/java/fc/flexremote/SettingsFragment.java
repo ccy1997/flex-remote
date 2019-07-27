@@ -9,6 +9,8 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     public void onCreatePreferences(Bundle bundle, String s) {
         // Load the Preferences from the XML file
         addPreferencesFromResource(R.xml.preferences);
+
+        // Set touch pad sensitivity seekbar's attributes
         SeekBarPreference sp = (SeekBarPreference) findPreference("set_touch_pad_sensitivity");
         sp.setMin(1);
         sp.setSelectable(false);
