@@ -143,6 +143,11 @@ public class RemoteControlListAdapter extends ArrayAdapter<RemoteControlConfig> 
         }
     }
 
+    /**
+     * Show a dialog for renaming a remote control
+     *
+     * @param v A remote control list item
+     */
     private void showRenameDialog(final View v) {
         AlertDialog.Builder builder = new AlertDialog.Builder(c, R.style.DialogTheme);
         builder.setMessage("Remote control name:");
@@ -171,6 +176,11 @@ public class RemoteControlListAdapter extends ArrayAdapter<RemoteControlConfig> 
         dialog.show();
     }
 
+    /**
+     * Show a pop-up menu for renaming or editing a remote control
+     *
+     * @param anchor A remote control list item
+     */
     private void showPopUpMenu(final View anchor) {
         PopupMenu popup = new PopupMenu(c, anchor);
         popup.getMenuInflater().inflate(R.menu.popup_menu_edit_button, popup.getMenu());
@@ -195,6 +205,11 @@ public class RemoteControlListAdapter extends ArrayAdapter<RemoteControlConfig> 
         popup.show();
     }
 
+    /**
+     * Show a dialog for deleting a remote control
+     *
+     * @param v A remote control list item
+     */
     private void showDeleteDialog(final View v) {
         AlertDialog.Builder builder = new AlertDialog.Builder(c, R.style.DialogTheme);
         builder.setMessage("Delete this custom remote?");
