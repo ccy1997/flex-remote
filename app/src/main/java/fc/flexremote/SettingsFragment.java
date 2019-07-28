@@ -12,6 +12,7 @@ import android.support.v7.preference.SeekBarPreference;
  * @since 1.0
  */
 public class SettingsFragment extends PreferenceFragmentCompat {
+
     @Override
     public void onCreatePreferences(Bundle bundle, String s) {
         // Load the Preferences from the XML file
