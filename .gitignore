@@ -6,9 +6,11 @@
 
 /build/
 
-/release/
+/app/release/
 
-*.pro
+/app/*.gradle
+
+/app/*.pro
 
 *.gradle
 
@@ -17,6 +19,8 @@
 gradlew
 
 *.bat
+
+gradle.properties
 
 *.properties
 
