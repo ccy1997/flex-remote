@@ -1,0 +1,226 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:2:1-49:12
+MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\8eb29a0f53df02d6c565d52b4dc3995f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\651b451cb0931b0ffdc7df5b61109d90\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\8f9c054440641d1f2baaf78199a3d348\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\ab9d3d970c0bbab8e9e0e9154d8472c8\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\112f15b9007ce23f1c386dd6027bc0c0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:17:1-36:12
+MERGED from [com.google.android.gms:play-services-gass:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\88710a7391357f2cfe4588da5c1c85d2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\f8449ddf8576b83191d602a488c8df02\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\25eeffef719191e6087f996d4f9688d0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\1b63a861e0f71632abc60778d5c58eda\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\4410eb06c1274bb50abce4d04cbc4191\AndroidManifest.xml:17:1-22:12
+MERGED from [com.adcolony:sdk:3.3.5] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\55a36882d5381e74b128447630526b3f\AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\ddbb214b7d81cab89f4ebb876f6b48d6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\226934667fa0e07f21897b38f0f9ffdb\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\b4b22fc5437c869415c710ba09092d3e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\4be716abbe530a5c0705ea983533a96d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\2a0d1bb0e61e910a7241ad1c69f4cdd1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customtabs:26.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\b66344345fdc9a4d984cc01cc6446a67\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\641c935050287b1137ee93ee895fdea6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.ads.mediation:adcolony:3.3.5.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\f86d8388b62f16e35b50f12f0894c798\AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\da57b5e729c5834351db5f0344da261f\AndroidManifest.xml:17:1-24:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\717618cc5592e915705caeef8a64cbda\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\dc165fe3bf14e77bf56a9e5ae866131b\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\a19fdc055159ce844afd2a31503cea92\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\69e9455589106bbaadeb87adaba9f6b4\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:2:1-49:12
+	package
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:2:1-49:12
+		INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:2:1-49:12
+		INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:6:3-65
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:6:20-62
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:7:3-77
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:7:20-74
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:8:3-74
+	android:name
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:8:20-71
+application
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:10:3-47:17
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\8f9c054440641d1f2baaf78199a3d348\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\8f9c054440641d1f2baaf78199a3d348\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\112f15b9007ce23f1c386dd6027bc0c0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\112f15b9007ce23f1c386dd6027bc0c0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:26:5-34:19
+MERGED from [com.google.android.gms:play-services-gass:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\88710a7391357f2cfe4588da5c1c85d2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-gass:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\88710a7391357f2cfe4588da5c1c85d2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\f8449ddf8576b83191d602a488c8df02\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\f8449ddf8576b83191d602a488c8df02\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:customtabs:26.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\b66344345fdc9a4d984cc01cc6446a67\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:customtabs:26.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\b66344345fdc9a4d984cc01cc6446a67\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\da57b5e729c5834351db5f0344da261f\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\da57b5e729c5834351db5f0344da261f\AndroidManifest.xml:22:5-20
+	android:supportsRtl
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:15:5-31
+	android:label
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:13:5-37
+	tools:ignore
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:17:7-46
+	android:roundIcon
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:14:5-50
+	android:icon
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:12:5-39
+	android:allowBackup
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:11:5-31
+	android:theme
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:16:5-36
+activity#fc.flexremote.MainActivity
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:18:5-25:16
+	android:theme
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:20:7-38
+	android:name
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:19:7-35
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:21:7-24:23
+action#android.intent.action.MAIN
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:22:9-60
+	android:name
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:22:17-58
+category#android.intent.category.LAUNCHER
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:23:9-68
+	android:name
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:23:19-66
+activity#fc.flexremote.RemoteControlActivity
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:26:5-32:16
+	android:theme
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:28:7-74
+	android:name
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:27:7-44
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:29:7-31:53
+	android:value
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:31:9-51
+	android:name
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:30:9-55
+activity#fc.flexremote.SettingsActivity
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:33:5-37:16
+	android:name
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:33:15-47
+activity#fc.flexremote.ConfigureRemoteControlActivity
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:38:5-44:16
+	android:theme
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:40:7-74
+	android:name
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:39:7-53
+activity#fc.flexremote.HelpActivity
+ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:45:5-46:16
+	android:name
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml:45:15-43
+uses-sdk
+INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\8eb29a0f53df02d6c565d52b4dc3995f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:preference-v7:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\8eb29a0f53df02d6c565d52b4dc3995f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\651b451cb0931b0ffdc7df5b61109d90\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\651b451cb0931b0ffdc7df5b61109d90\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\8f9c054440641d1f2baaf78199a3d348\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\8f9c054440641d1f2baaf78199a3d348\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\ab9d3d970c0bbab8e9e0e9154d8472c8\AndroidManifest.xml:21:5-23:62
+MERGED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\ab9d3d970c0bbab8e9e0e9154d8472c8\AndroidManifest.xml:21:5-23:62
+MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\112f15b9007ce23f1c386dd6027bc0c0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\112f15b9007ce23f1c386dd6027bc0c0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-gass:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\88710a7391357f2cfe4588da5c1c85d2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-gass:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\88710a7391357f2cfe4588da5c1c85d2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\f8449ddf8576b83191d602a488c8df02\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\f8449ddf8576b83191d602a488c8df02\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\25eeffef719191e6087f996d4f9688d0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\25eeffef719191e6087f996d4f9688d0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\1b63a861e0f71632abc60778d5c58eda\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\1b63a861e0f71632abc60778d5c58eda\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\4410eb06c1274bb50abce4d04cbc4191\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\4410eb06c1274bb50abce4d04cbc4191\AndroidManifest.xml:20:5-44
+MERGED from [com.adcolony:sdk:3.3.5] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\55a36882d5381e74b128447630526b3f\AndroidManifest.xml:8:5-11:939
+MERGED from [com.adcolony:sdk:3.3.5] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\55a36882d5381e74b128447630526b3f\AndroidManifest.xml:8:5-11:939
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\ddbb214b7d81cab89f4ebb876f6b48d6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\ddbb214b7d81cab89f4ebb876f6b48d6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\226934667fa0e07f21897b38f0f9ffdb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\226934667fa0e07f21897b38f0f9ffdb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\b4b22fc5437c869415c710ba09092d3e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\b4b22fc5437c869415c710ba09092d3e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\4be716abbe530a5c0705ea983533a96d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\4be716abbe530a5c0705ea983533a96d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\2a0d1bb0e61e910a7241ad1c69f4cdd1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\2a0d1bb0e61e910a7241ad1c69f4cdd1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:26.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\b66344345fdc9a4d984cc01cc6446a67\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:26.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\b66344345fdc9a4d984cc01cc6446a67\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\641c935050287b1137ee93ee895fdea6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\641c935050287b1137ee93ee895fdea6\AndroidManifest.xml:20:5-44
+MERGED from [com.google.ads.mediation:adcolony:3.3.5.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\f86d8388b62f16e35b50f12f0894c798\AndroidManifest.xml:8:5-10:41
+MERGED from [com.google.ads.mediation:adcolony:3.3.5.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\f86d8388b62f16e35b50f12f0894c798\AndroidManifest.xml:8:5-10:41
+MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\da57b5e729c5834351db5f0344da261f\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\da57b5e729c5834351db5f0344da261f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\717618cc5592e915705caeef8a64cbda\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\717618cc5592e915705caeef8a64cbda\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\dc165fe3bf14e77bf56a9e5ae866131b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\dc165fe3bf14e77bf56a9e5ae866131b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\a19fdc055159ce844afd2a31503cea92\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\a19fdc055159ce844afd2a31503cea92\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\69e9455589106bbaadeb87adaba9f6b4\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\69e9455589106bbaadeb87adaba9f6b4\AndroidManifest.xml:20:5-44
+INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\ab9d3d970c0bbab8e9e0e9154d8472c8\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+		ADDED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidStudioProject\FlexRemote\app\src\main\AndroidManifest.xml
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:29:9-33:64
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:32:13-37
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:31:13-122
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:33:13-61
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\5e4487cfb1e00a16e0c9c21730dfcca4\AndroidManifest.xml:30:13-65
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\f8449ddf8576b83191d602a488c8df02\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\f8449ddf8576b83191d602a488c8df02\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\f8449ddf8576b83191d602a488c8df02\AndroidManifest.xml:24:13-58
+meta-data#android.support.VERSION
+ADDED from [com.android.support:customtabs:26.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\b66344345fdc9a4d984cc01cc6446a67\AndroidManifest.xml:23:9-25:38
+	android:value
+		ADDED from [com.android.support:customtabs:26.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\b66344345fdc9a4d984cc01cc6446a67\AndroidManifest.xml:25:13-35
+	android:name
+		ADDED from [com.android.support:customtabs:26.1.0] C:\Users\ccy\.gradle\caches\transforms-2\files-2.1\b66344345fdc9a4d984cc01cc6446a67\AndroidManifest.xml:24:13-51

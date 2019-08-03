@@ -31,7 +31,7 @@ public class HelpActivity extends AppCompatActivity {
     TextView serverDownloadLink = (TextView) findViewById(R.id.faq2_server_dl_link);
     serverDownloadLink.setClickable(true);
     serverDownloadLink.setMovementMethod(LinkMovementMethod.getInstance());
-    String html = "<a href='https://drive.google.com/file/d/1jruH1lxem7vdxBz6yIL0vth04VMd-Daw/view?usp=sharing'>FlexRemote Server</a>";
+    String html = "<a href='https://github.com/ccy1997/flex-remote/releases'>FlexRemote Server</a>";
 
     // For different android versions
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
