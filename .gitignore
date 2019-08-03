@@ -6,11 +6,15 @@
 
 /build/
 
+/app/build/
+
 /app/release/
 
 /app/*.gradle
 
 /app/*.pro
+
+/common/build/
 
 *.gradle
 
